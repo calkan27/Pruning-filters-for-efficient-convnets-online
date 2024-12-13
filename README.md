@@ -45,13 +45,18 @@ python main.py --train-flag --save-path /path/to/save/model
 
 ```
 
-```
-You can resume training from a saved model checkpoint:
-```
+To train the network using multiple GPUs:
 
 ```
-python main.py --resume-flag --load-path /path/to/load/model --save-path /path/to/save/model
+python main.py --train-flag --multi-gpu --save-path /path/to/save/model
+
 ```
+To resume training from a saved model checkpoint:
+```
+python main.py --resume-flag --load-path /path/to/load/model --save-path /path/to/save/model
+
+```
+
 
 ### Pruning the Network
 
