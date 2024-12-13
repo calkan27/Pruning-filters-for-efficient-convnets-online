@@ -2,7 +2,7 @@
 
 This repository contains my submission for the final project of the COSI 159A "Computer Vision" course at Brandeis University. The project required implementing an academic paper in the field of computer vision. For extra credit, we were also asked to improve upon the paper's results. I was assigned the paper "Pruning Filters for Efficient ConvNets" by Hao Li et al., 2017. The original implementation of this paper can be found in the original_implementation folder.
 
-The paper's primary goal was to reduce the computational and storage costs of convolutional neural networks (CNNs) while preserving their performance, even as these networks become deeper and more complex. My improvements focused on applying advanced pruning techniques to further reduce the size and complexity of ConvNets without significantly compromising accuracy. A detailed qualitative discussion of the original paper and my enhancements can be found in the PDF document, "Improving Pruning Filters for Efficient ConvNets." A more brief description of my improvements can be found below.
+The paper's primary goal was to reduce the computational and storage costs of convolutional neural networks (CNNs) while preserving their performance, even as these networks become deeper and more complex. My improvements focused on applying advanced pruning techniques to further reduce the size and complexity of ConvNets without significantly compromising accuracy. A detailed qualitative discussion of the original paper and my enhancements can be found in the PDF document, "Improving_Pruning_Filters_for_Efficient_ConvNets.pdf." A more brief discussion of my improvements can be found below.
 
 All code files located outside the original_implementation folder represent the improvements I made, while all code within the original_implementation folder corresponds to the original implementation of the paper. Below, you’ll find instructions on how to run the improved implementation. Instructions for running the original implementation are available in the README file within the original_implementation folder. The primary dataset used for this project is CIFAR-10.
 
@@ -90,7 +90,7 @@ The pruning technique aims to reduce the computational cost and model size by re
 
 
 ## Improvements Over Prior Work
-The code improves upon the earlier "PRUNING FILTERS FOR EFFICIENT CONVNETS" by introducing an online clustering approach during training, which dynamically clusters 
+The code improves upon the earlier "Pruning Filters for Efficient ConvNets" by introducing an online clustering approach during training, which dynamically clusters 
 filters based on their feature similarities rather than just pruning based on magnitude or other static measures. This method aims to maintain or even enhance model 
 accuracy by ensuring that only redundant filters that contribute minimally to the output accuracy are pruned. Moreover, instead of just focusing on the final layer or
 fully connected layers, this method evaluates and prunes across multiple layers of the network which can lead to significant computational savings without a drop in performance.
