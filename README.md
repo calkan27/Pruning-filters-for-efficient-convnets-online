@@ -1,6 +1,15 @@
 # Improving Pruning Filters for Efficient ConvNets
 
-This repository contains our improvements on the implementation of the paper "Pruning Filters for Efficient ConvNets" by Hao Li et al., 2017, focusing on the application of pruning techniques to reduce the size and complexity of Convolutional Neural Networks (ConvNets) without significant loss of accuracy. The primary dataset used in this implementation is CIFAR-10.
+This repository contains my submission for the final project of the COSI 159A "Computer Vision" course at Brandeis University. The project required implementing an academic paper in the field of computer vision. For extra credit, we were also given the opportunity to improve upon the paper's results. I was assigned the paper "Pruning Filters for Efficient ConvNets" by Hao Li et al., 2017. The original implementation of this paper can be found in the original_implementation folder.
+
+The paper's primary goal was to reduce the computational and storage costs of convolutional neural networks (CNNs) while preserving their performance, even as these networks become deeper and more complex. My improvements focused on applying advanced pruning techniques to further reduce the size and complexity of ConvNets without significantly compromising accuracy. A detailed qualitative discussion of the original paper and my enhancements can be found in the PDF document, "Improving Pruning Filters for Efficient ConvNets."
+
+Below, you’ll find instructions on how to run the improved implementation. Instructions for running the original implementation are available in the README file within the original_implementation folder. The primary dataset used for this project is CIFAR-10.
+
+I chose to include this project in my github for several reasons. It was the largest, most labor-intensive, and most independent project I completed as a student at Brandeis University. Unlike other assignments, it lacked a structured framework, making it extremely open-ended. Additionally, it marked my first engagement with academic research, where I learned to implement solutions based on the demands of an external source while addressing gaps in their descriptions. This experience encouraged me to think critically and forwardly, fostering essential skills for collaborative work. Given the significance of these lessons, I consider this project a pivotal milestone in my computer science career.
+
+
+
 
 ## Requirements
 
