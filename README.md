@@ -1,12 +1,12 @@
 # Improving Pruning Filters for Efficient ConvNets
 
-This repository contains my submission for the final project of the COSI 159A "Computer Vision" course at Brandeis University. The project required implementing an academic paper in the field of computer vision. For extra credit, we were also asked to improve upon the paper's results. I was assigned the paper "Pruning Filters for Efficient ConvNets" by Hao Li et al., 2017. The original implementation of this paper can be found in the original_implementation folder.
+This repository contains my submission for the final project of the COSI 159A "Computer Vision" course at Brandeis University. The project required implementing an academic paper in the field of computer vision. For extra credit, we were tasked with improving upon the paper's results. My work is based on the paper "Pruning Filters for Efficient ConvNets" by Hao Li et al., 2017. The original implementation is included in the original_implementation folder for reference, while the improved implementation is located in the main repository.
 
-The paper's primary goal was to reduce the computational and storage costs of convolutional neural networks (CNNs) while preserving their performance, even as these networks become deeper and more complex. My improvements focused on applying advanced pruning techniques to further reduce the size and complexity of ConvNets without significantly compromising accuracy. A detailed qualitative discussion of the original paper and my enhancements can be found in the PDF document, "Improving_Pruning_Filters_for_Efficient_ConvNets.pdf." A more brief discussion of my improvements can be found below.
+The paper's primary goal was to reduce the computational and storage costs of convolutional neural networks (CNNs) while preserving their performance, even as these networks become deeper and more complex. My improvements focused on applying advanced pruning techniques and enhancements designed to further reduce the size and complexity of convolutional neural networks (CNNs) without significantly compromising accuracy. These enhancements include dynamic online clustering during training, multi-layer pruning, and additional functionality like multi-GPU support and improved file management. A detailed discussion of the original paper and my enhancements can be found in the accompanying PDF document, "Improving_Pruning_Filters_for_Efficient_ConvNets.pdf".
 
-All code files located outside the original_implementation folder represent the improvements I made, while all code within the original_implementation folder corresponds to the original implementation of the paper. Below, you’ll find instructions on how to run the improved implementation. Instructions for running the original implementation are available in the README file within the original_implementation folder. The primary dataset used for this project is CIFAR-10.
+The primary dataset used for this project is CIFAR-10. Instructions for running the improved implementation are outlined below. To run the original implementation, refer to the README in the original_implementation folder.
 
-I included this project in my GitHub because it was the most intellectually challenging, labor-intensive, and open-ended project I completed as a student at Brandeis University. It also marked my first experience with academic research, where I learned to implement a paper's methodology and to interpret and address gaps in external descriptions. Additionally, the pursuit of improvements to the paper challenged me to think innovatively, devising novel ideas that offered meaningful enhancements. Given these lessons, the completion of this project marks a pivotal milestone in my computer science journey, shaping my ability to tackle complex problems and think creatively.
+I included this project in my GitHub because it was the most intellectually challenging, labor-intensive, and open-ended project I completed as a student at Brandeis University. It also marked my first experience with academic research, where I learned to implement a paper's methodology and address gaps in external descriptions. The pursuit of improvements challenged me to think innovatively, devising novel ideas that offered meaningful enhancements. Completing this project was a pivotal milestone in my computer science journey, shaping my ability to tackle complex problems and think creatively.
 
 ## Requirements
 
@@ -32,14 +32,17 @@ The CIFAR-10 dataset is used for both training and testing the network. The data
 
 ### Configuration
 
-Adjust the training settings such as epochs, batch size, learning rate, and the path for saving models in the args configuration in the parameter.py script.
+Adjust the training settings such as epochs, batch size, learning rate, and the path for saving models in the args configuration in the parameter.py script.  The improved implementation also supports Multi-GPU Training and Dynamic Clustering for filter pruning.
+
+
 
 ### Training the Network
 
-To train the network from scratch:
+To train the network from scratch on a single GPU or CPU:
 
 ```
 python main.py --train-flag --save-path /path/to/save/model
+
 ```
 
 ```
