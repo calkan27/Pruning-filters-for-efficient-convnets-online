@@ -1,15 +1,10 @@
 # Improving Pruning Filters for Efficient ConvNets
 
-This repository contains my submission for the final project of the COSI 159A "Computer Vision" course at Brandeis University. The project required implementing an academic paper in the field of computer vision. For extra credit, we were also given the opportunity to improve upon the paper's results. I was assigned the paper "Pruning Filters for Efficient ConvNets" by Hao Li et al., 2017. The original implementation of this paper can be found in the original_implementation folder.
+This repository contains my submission for the final project of the COSI 159A "Computer Vision" course at Brandeis University. The project required implementing an academic paper in the field of computer vision, and to improve upon the paper's results. I was assigned the paper "Pruning Filters for Efficient ConvNets" by Hao Li et al., 2017. The original implementation of this paper can be found in the original_implementation folder.
 
 The paper's primary goal was to reduce the computational and storage costs of convolutional neural networks (CNNs) while preserving their performance, even as these networks become deeper and more complex. My improvements focused on applying advanced pruning techniques to further reduce the size and complexity of ConvNets without significantly compromising accuracy. A detailed qualitative discussion of the original paper and my enhancements can be found in the PDF document, "Improving Pruning Filters for Efficient ConvNets."
 
 All code files located outside the original_implementation folder represent the improvements I made, while all code within the original_implementation folder corresponds to the original implementation of the paper. Below, you’ll find instructions on how to run the improved implementation. Instructions for running the original implementation are available in the README file within the original_implementation folder. The primary dataset used for this project is CIFAR-10.
-
-I included this project in my GitHub because it was the most intellectually challenging, labor-intensive, and open-ended project I completed as a student at Brandeis University. It also marked my first experience with academic research, where I learned to implement a paper's methodology and to interpret and address gaps in external descriptions. Additionally, the pursuit of improvements to the paper challenged me to think innovatively, devising novel ideas that offered meaningful enhancements. Given these lessons, the completion of this project marks a pivotal milestone in my computer science journey, shaping my ability to tackle complex problems and think creatively.
-
-
-
 
 ## Requirements
 
