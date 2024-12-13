@@ -60,11 +60,13 @@ python main.py --resume-flag --load-path /path/to/load/model --save-path /path/t
 
 ### Pruning the Network
 
-To prune the trained network:
+To prune the trained network using dynamic clustering:
 
 ```
-python main.py --prune-flag --load-path /path/to/load/model --save-path /path/to/save/pruned_model
+python main.py --prune-flag --num-clusters 5 --load-path /path/to/load/model --save-path /path/to/save/pruned_model
+
 ```
+--num-clusters specifies the number of clusters for grouping and pruning filters. The default is 5.
 
 ### Retraining the Network after Pruning
 
@@ -72,7 +74,15 @@ To retrain the pruned network:
 
 ```
 python main.py --retrain-flag --load-path /path/to/load/pruned_model --save-path /path/to/save/retrained_model
+
 ```
+To retrain the pruned network using multiple GPUs:
+
+```
+python main.py --retrain-flag --multi-gpu --load-path /path/to/load/pruned_model --save-path /path/to/save/retrained_model
+
+```
+
 
 ### Testing the Network
 
@@ -82,26 +92,25 @@ To test the performance of the network:
 python main.py --load-path /path/to/load/model
 ```
 
+To test the performance of the network using multiple GPUs:
+
+```
+python main.py --load-path /path/to/load/model --multi-gpu
+```
 ## Implementation Details
 
-Our implementation uses a variant of the VGG network adapted for CIFAR-10. It incorporates several modules:
+The improved implementation is based on the VGG architecture, adapted for the CIFAR-10 dataset. Key modules include:
 
-- VGG: The network architecture, including feature extractors and classifiers.
+- VGG: Defines the network architecture with feature extractors and classifiers.
+- train_network: Handles the training process, including data loading, forward/backward passes, and dynamic pruning during training.
+- prune_network: Implements advanced pruning techniques, including online clustering to dynamically group and prune redundant filters.
+- test_network: Evaluates the network’s performance on the testing set.
+- Loss_Calculator: Adds support for clustering loss and L1 regularization to enhance model sparsity.
 
-- train_network: Handles the training process, including data loading, forward and backward passes.
-
-- prune_network: Implements the pruning logic to selectively disable filters based on their importance to the accuracy.
-
-- test_network: Evaluates the model's performance on the testing set.
-
-The pruning technique aims to reduce the computational cost and model size by removing less important filters without compromising the model's predictive power.
 
 
 ## Improvements Over Prior Work
-The code improves upon the earlier "Pruning Filters for Efficient ConvNets" by introducing an online clustering approach during training, which dynamically clusters 
-filters based on their feature similarities rather than just pruning based on magnitude or other static measures. This method aims to maintain or even enhance model 
-accuracy by ensuring that only redundant filters that contribute minimally to the output accuracy are pruned. Moreover, instead of just focusing on the final layer or
-fully connected layers, this method evaluates and prunes across multiple layers of the network which can lead to significant computational savings without a drop in performance.
+This implementation builds upon the "Pruning Filters for Efficient ConvNets" paper by introducing several key advancements designed to enhance efficiency and maintain accuracy. A dynamic online clustering approach is employed during training to group filters based on their feature similarities, ensuring that redundant filters are identified and pruned more effectively. Unlike the original method, which often focused pruning on the final or fully connected layers, this approach evaluates and prunes filters across all layers of the network, resulting in significant computational savings without compromising performance. Additionally, the improved implementation supports multi-GPU training, enabling faster processing for larger models and datasets. To streamline experiment management, a new file management system generates unique, timestamped filenames for saved models and evaluation results, preventing overwrites and simplifying tracking. These enhancements together represent a significant step forward in making convolutional neural networks more efficient while maintaining or even improving their predictive capabilities.
 
 
 ## Results and Analysis
