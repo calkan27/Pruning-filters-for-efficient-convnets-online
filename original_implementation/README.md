@@ -42,9 +42,26 @@ python main.py --resume-flag --load-path /path/to/load/model --save-path /path/t
 To prune the trained network:
 ```
 python main.py --retrain-flag --load-path /path/to/load/pruned_model --save-path /path/to/save/retrained_model
-``
+```
 Retraining fine-tunes the pruned network to recover any lost performance.
 
 ## Testying the Network
+
+To evaluate the network on the CIFAR-10 test set:
+
+```
+python main.py --load-path /path/to/load/model
+```
+
+## Implementation Details
+
+This implementation is based on the methodology outlined in the original paper. Key components include:
+
+- A version of the VGG network adapted for the CIFAR-10 dataset.
+- Filters are pruned based on their importance, which is determined by their absolute magnitude.
+- Scripts to train, prune, retrain, and evaluate the model.
+
+## Results and Analysis
+The results of experiments using this implementation can be found in the results.zip file in this folder. For a detailed analysis, refer to the main repository or the write-up "Improving_Pruning_Filters_for_Efficient_ConvNets.pdf" in the parent directory.
 
 
