@@ -114,6 +114,6 @@ This implementation builds upon the "Pruning Filters for Efficient ConvNets" pap
 
 
 ## Results and Analysis
-Analysis comparing our implementation with the original implementation can be found in the file `analysis.ipynb`. Results from experiments involving our implementation can be found in `results.zip` and results from the original implementation can be found in `original_implementation/results.zip`.
+Analysis comparing my implementation with the original implementation can be found in `analysis.ipynb`. Results from experiments involving my implementation are in `results.zip` and results from the original implementation can be found in `original_implementation/results.zip`.
 
 The results and analysis found in these files are described in more detail in the write up titled `Improving_Pruning_Filters_for_Efficient_ConvNets.pdf`.
